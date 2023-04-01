@@ -1,0 +1,20 @@
+Contact
+{
+UID: auto-gen,
+First Name: String,
+Last Name: String,
+Address: String,
+Cell Number: String,
+Home Number: String
+}
+
+Event
+{
+UID: auto-gen
+Date: DateTime,
+First Name: String,
+Last Name: String,
+ContactRef: Contact Reference
+EventType: String - Constant
+Description: String
+}
