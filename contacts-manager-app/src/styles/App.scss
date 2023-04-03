@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #ecf0f1;
 }
+.sideBarMenu{
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  &.menu {
+  background: #34495e;
+  height: 100vh;
+  width: 250px;
+  opacity:1; 
+  position: absolute;
+  visibility: hidden;
+  transition: all 0.1s ease;
+  transform: translateX(50%);
+  right: 0%;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
 
-.App-link {
-  color: #61dafb;
-}
+    li {
+      font-size: 16px;
+      border-bottom: 1px solid #fff;
+      transition: all 0.1s ease;
+      animation: fadeInRight .1s ease forwards;
+      opacity:0;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+      &:hover {
+        opacity: 0.8;
+        transition: all 0.1s ease;
+        background: #000;
+        cursor: pointer;
+      }
+    }
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    width: 86px;
+    height: 40px;
+    background-color: #f9cb11;
+    border: none;
+    border-radius:6px;
+    position:absolute;
+    top: 50%;
+    left:50%;
+    cursor:pointer;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+    outline: 0;
+    transition: all 0.25s ease;
+  
+    &:hover {
+      opacity: 0.8;
+      transition: all 0.25s ease;    
+    }
+  }
+
+  &.active {
+    opacity:1;
+    visibility: visible;
+    transition: all 0.1s ease;
+    transform: translateX(0);
+  }
+  }
+  
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      right: 20%;
+    }
+    100% {
+      opacity: 1;
+      right: 0;
+    }
   }
 }
